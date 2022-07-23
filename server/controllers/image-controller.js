@@ -1,4 +1,4 @@
-const imageService = require("../services/image-services");
+const imageService = require("../services/image-service");
 
 class ImageController {
   async putImage(req, res, next) {
