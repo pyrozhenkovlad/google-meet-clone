@@ -6,7 +6,7 @@ const App: React.FunctionComponent = () => {
   return (
     <div>
       <UsersList />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

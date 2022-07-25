@@ -1,0 +1,33 @@
+.call_info {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.icons-element {
+  margin: 0px 5px;
+  padding: 10px;
+  background-color: #3d4144;
+  clip-path: ellipse(50% 45% at 50% 50%);
+  cursor: pointer;
+}
+
+.end-call {
+    background-color: red;
+    clip-path: ellipse(50% 45% at 50% 50%);
+}
+
+.footer-container {
+    margin-top: 20px;
+    padding: 0px 10px;
+}
+
+.additional-icons {
+    margin: 0px 5px;
+    cursor: pointer;
+}

@@ -2,6 +2,7 @@
   height: 270px;
   width: 464px;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .card-container {
