@@ -1,0 +1,16 @@
+.cam {
+  height: 270px;
+  width: 464px;
+  border-radius: 15px;
+}
+
+.card-container {
+  position: relative;
+  color: white;
+}
+
+.name {
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+}

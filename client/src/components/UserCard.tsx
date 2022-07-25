@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { getRandomImage } from "../api/api";
+import { CardProps } from "../types/types";
+import "../styles/Card.css";
 
-interface CardProps {
-  avatarUrl?: string;
-  name?: string;
-  children?: React.ReactChild | React.ReactNode;
-}
+const UserCard = ({ avatarUrl, name }: CardProps) => {
+  const [showCat, setShowCat] = useState("");
+  const [catImage, setCatImage] = useState("");
 
-const UserCard = ({ avatarUrl, name, children }: CardProps) => {
+  const HandleClick = () => {
+    getRandomImage().then((response) => setCatImage(response));
+    setTimeout(() => {
+      setShowCat("show");
+    }, 200);
+  };
+
   return (
     <>
       <div className="card-container">
-        <div className="card__avatar">
-          <img src={avatarUrl} alt="user" />
-        </div>
-        <div>
-          <p>{name}</p>
-        </div>
+        <span onClick={HandleClick} className="card__avatar">
+          {showCat === "show" ? (
+            <img className="cam" src={catImage} alt="cat" />
+          ) : (
+            <img className="cam" src={avatarUrl} alt="user" />
+          )}
+        </span>
+        <div className="name">{name}</div>
       </div>
     </>
   );
