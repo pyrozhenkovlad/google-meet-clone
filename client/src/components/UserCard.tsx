@@ -4,26 +4,26 @@ import { CardProps } from "../types/types";
 import "../styles/Card.css";
 
 const UserCard = ({ avatarUrl, name }: CardProps) => {
-  const [showCat, setShowCat] = useState("");
+  const [showCat, setShowCat] = useState(false);
   const [catImage, setCatImage] = useState("");
 
-  const HandleClick = () => {
+  const handleClick = () => {
     getRandomImage().then((response) => setCatImage(response));
     setTimeout(() => {
-      setShowCat("show");
+      setShowCat(true);
     }, 200);
   };
 
   return (
     <>
       <div className="card-container">
-        <span onClick={HandleClick} className="card__avatar">
-          {showCat === "show" ? (
+        <div onClick={handleClick} className="card__avatar">
+          {showCat ? (
             <img className="cam" src={catImage} alt="cat" />
           ) : (
             <img className="cam" src={avatarUrl} alt="user" />
           )}
-        </span>
+        </div>
         <div className="name">{name}</div>
       </div>
     </>

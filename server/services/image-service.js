@@ -9,7 +9,7 @@ class ImageService {
   async getRandomImage() {
     const imagesCount = await ImageModel.countDocuments();
     const randomValue = Math.floor(Math.random() * imagesCount);
-    const image = await ImageModel.find({id: randomValue.toString()}).select("-_id , imageUrl");
+    const image = await ImageModel.findOne({id: randomValue.toString()}).select("-_id , imageUrl");
     return image;
   }
 }

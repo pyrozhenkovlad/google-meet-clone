@@ -26,8 +26,8 @@ const UsersList: React.FC = () => {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid container item spacing={1}>
-          {users.map((e) => (
-            <Grid item xs={3}>
+          {users.map((e,i) => (
+            <Grid key={i} item xs={3}>
               <Item>
                 <UserCard name={e.name} avatarUrl={e.avatarUrl} />
               </Item>
