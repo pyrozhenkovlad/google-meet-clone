@@ -10,6 +10,11 @@
   color: white;
 }
 
+.cam:hover {
+  border-radius: 15px;
+  outline: 2px solid rgb(20, 130, 233);
+}
+
 .name {
   position: absolute;
   bottom: 15px;

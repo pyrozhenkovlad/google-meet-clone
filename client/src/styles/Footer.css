@@ -1,6 +1,7 @@
 .call_info {
   display: flex;
   justify-content: space-between;
+  font-size: 18px;
 }
 
 .icons-container {
@@ -15,6 +16,10 @@
   clip-path: ellipse(50% 45% at 50% 50%);
 }
 
+.icons-element:hover {
+  background-color: rgba(211, 211, 211, 0.363);
+}
+
 .icons-element svg {
   cursor: pointer;
   vertical-align: middle;
@@ -25,6 +30,10 @@
   clip-path: ellipse(50% 45% at 50% 50%);
 }
 
+.end-call:hover {
+  background-color: red;
+}
+
 .footer-container {
   margin-top: 20px;
   padding: 0px 10px;
@@ -33,4 +42,8 @@
 .additional-icons {
   margin: 0px 5px;
   cursor: pointer;
+}
+
+.additional-icons:hover {
+  transform: scale(1.2);
 }

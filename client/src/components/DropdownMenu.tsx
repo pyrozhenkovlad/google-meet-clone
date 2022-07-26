@@ -2,21 +2,8 @@ import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import Menu, { MenuProps } from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Divider from "@mui/material/Divider";
-import {
-  AnnouncementOutlined,
-  AutoAwesome,
-  BorderColorOutlined,
-  ClosedCaption,
-  DashboardOutlined,
-  FullscreenOutlined,
-  MoreVertOutlined,
-  PhoneForwardedRounded,
-  QueryStatsOutlined,
-  RadioButtonCheckedOutlined,
-  ReportGmailerrorredOutlined,
-  SettingsOutlined,
-} from "@mui/icons-material";
+import { BorderColorOutlined, MoreVertOutlined } from "@mui/icons-material";
+import { dropdownData } from "./data/DropdownMenuData";
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -65,6 +52,8 @@ const StyledMenu = styled((props: MenuProps) => (
   },
 }));
 
+/* need some refactoring */
+
 const DropdownMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -89,52 +78,15 @@ const DropdownMenu = () => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          <BorderColorOutlined />
-          Дошка для конференцій
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <RadioButtonCheckedOutlined />
-          Записувати зустріч
-        </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          <DashboardOutlined />
-          Змінити макет
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <FullscreenOutlined />
-          Повноекранний режим
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <AutoAwesome />
-          Застосувати візуальні ефекти
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <ClosedCaption />
-          Увімкнути субтитри
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <PhoneForwardedRounded />
-          Використовувати телефон для передачі зв'язку
-        </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          <AnnouncementOutlined />
-          Повідомити про проблему
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <ReportGmailerrorredOutlined />
-          Повідомити про порушення
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <QueryStatsOutlined />
-          Вирішення проблема і довідка
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <SettingsOutlined />
-          Налаштування
-        </MenuItem>
+        {dropdownData.map((e, i) => (
+          <div key={i}>
+            <MenuItem onClick={handleClose} disableRipple key={i}>
+              {e.icon}
+              {e.title}
+            </MenuItem>
+            {e.divide}
+          </div>
+        ))}
       </StyledMenu>
     </div>
   );
