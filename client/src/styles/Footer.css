@@ -1,7 +1,6 @@
 .call_info {
   display: flex;
   justify-content: space-between;
-  
 }
 
 .icons-container {
@@ -14,20 +13,24 @@
   padding: 10px;
   background-color: #3d4144;
   clip-path: ellipse(50% 45% at 50% 50%);
+}
+
+.icons-element svg {
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .end-call {
-    background-color: red;
-    clip-path: ellipse(50% 45% at 50% 50%);
+  background-color: red;
+  clip-path: ellipse(50% 45% at 50% 50%);
 }
 
 .footer-container {
-    margin-top: 20px;
-    padding: 0px 10px;
+  margin-top: 20px;
+  padding: 0px 10px;
 }
 
 .additional-icons {
-    margin: 0px 5px;
-    cursor: pointer;
+  margin: 0px 5px;
+  cursor: pointer;
 }
