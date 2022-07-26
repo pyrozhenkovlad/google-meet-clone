@@ -52,8 +52,6 @@ const StyledMenu = styled((props: MenuProps) => (
   },
 }));
 
-/* need some refactoring */
-
 const DropdownMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
