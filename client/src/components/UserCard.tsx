@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { getRandomImage } from "../api/api";
 import { CardProps } from "../types/types";
 import "../styles/Card.css";

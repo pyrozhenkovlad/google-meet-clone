@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import Menu, { MenuProps } from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { BorderColorOutlined, MoreVertOutlined } from "@mui/icons-material";
+import { MoreVertOutlined } from "@mui/icons-material";
 import { dropdownData } from "./data/DropdownMenuData";
 
 const StyledMenu = styled((props: MenuProps) => (
