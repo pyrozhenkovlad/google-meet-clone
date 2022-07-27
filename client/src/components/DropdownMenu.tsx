@@ -78,7 +78,13 @@ const DropdownMenu = () => {
       >
         {dropdownData.map((e, i) => (
           <div key={i}>
-            <MenuItem onClick={handleClose} disableRipple key={i}>
+            <MenuItem
+              onClick={() => {
+                alert(e.title);
+              }}
+              disableRipple
+              key={i}
+            >
               {e.icon}
               {e.title}
             </MenuItem>
